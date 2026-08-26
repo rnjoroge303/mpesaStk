@@ -31,7 +31,7 @@ async function stkPush(req,res,next) {
                 PartyA: phone_no,
                 PartyB: shortCode,
                 PhoneNumber: phone_no,
-                CallBackURL: "https://5d1a-102-205-236-30.ngrok-free.app/pay/callback",
+                CallBackURL: "https://mpesastk-rbaz.onrender.com/pay/callback",
                 AccountReference: "Clad Legion Esports",
                 TransactionDesc: "Team registration"
             },
