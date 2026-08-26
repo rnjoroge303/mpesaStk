@@ -26,7 +26,6 @@ async function createDatabase(){
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             )`
         );
-        await pool.query(`SET GLOBAL event_scheduler = ON`)
         await pool.query(`CREATE EVENT DeletePending ON SCHEDULE EVERY 30 SECOND DO DELETE FROM clients WHERE c_status IN ('Pending', 'Failed')AND created_at <= NOW() - INTERVAL 2 MINUTE`)
         console.log('Table Created Success.')
     } catch (error) {
