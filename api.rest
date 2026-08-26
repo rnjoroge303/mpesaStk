@@ -1,0 +1,9 @@
+POST http://localhost:8000/pay/client
+Content-Type: application/json
+
+{
+    "phone" : "0797510626",
+    "amount" : 1,
+    "package" : "Normal",
+    "duration" : "12Hrs"
+}
