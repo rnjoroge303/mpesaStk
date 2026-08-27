@@ -17,7 +17,13 @@ router.post('/client',userData,generateToken,stkPush, async(req,res,)=>{
 });
 router.post('/callback',async (req,res)=>{
     const callback = req.body.Body.stkCallback;
-    console.log(callback)
+
+    if(!callback){
+        console.log("Data not Available")
+    }else{
+        console.log(callback)
+    }
+   
     if(callback.ResultCode === 1032 || callback.ResultCode === 1){
         await pool.query(`UPDATE clients SET c_status = 'Failed' WHERE t_code = ?`,[callback.CheckoutRequestID])
         res.json("ok")
