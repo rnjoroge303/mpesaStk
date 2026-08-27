@@ -10,7 +10,7 @@ async function userData(req,res,next) {
     pool.query(`DELETE FROM clients WHERE phone_no = ? AND c_status IN ('Pending', 'Failed')`,[phone_no]);
     console.log('Deleteed')
     try {
-        await pool.query(`INSERT INTO clients(package_name,price,duration,phone_no) VALUES (?,?,?,?)`,[package,amount,duration,phone_no])
+        await pool.query(`INSERT INTO clients(package_name,price,duration,phone_no) VALUES (?,?,?,?)`,[package_name,amount,duration,phone_no])
         console.log('Data inserted');
 
         if(next)next();
