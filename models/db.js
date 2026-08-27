@@ -7,7 +7,7 @@ const pool = db.createPool({
     user:process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE_NAME,
-    connectionLimit: 5,
+    connectionLimit: 3,
     waitForConnections: true,
     queueLimit: 0 
 });

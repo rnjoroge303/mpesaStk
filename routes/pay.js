@@ -4,7 +4,7 @@ const pool = require('../models/db')
 async function userData(req,res,next) {
     phone_no = '254'+req.body.phone.substring(1);
     amount = req.body.amount;
-    const package = req.body.package;
+    const package_name = req.body.package;
     const duration = req.body.duration;
     
     pool.query(`DELETE FROM clients WHERE phone_no = ? AND c_status IN ('Pending', 'Failed')`,[phone_no]);
